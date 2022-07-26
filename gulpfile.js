@@ -13,5 +13,12 @@ global.app = {
 //Import tasks
 import { copy } from "./gulp/tasks/copy.js";
 
+//Watcher for file changes
+function watcher() {
+    gulp.watch(path.watch.files, copy)
+}
+//Building scenarios for executing tasks 
+const dev = gulp.series(copy, watcher);
+
 //Implementation the default script
-gulp.task('default', copy);
+gulp.task('default', dev);

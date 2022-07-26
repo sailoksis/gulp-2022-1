@@ -1,6 +1,6 @@
 //Get name of project folder
 import * as nodePath from 'path';
-const rootFolder = nodePath.basename(nodePath.resolve())
+const rootFolder = nodePath.basename(nodePath.resolve());
 
 
 const buildFolder = `/.dist`; //We can change name project folder
@@ -13,11 +13,13 @@ export const path = {
     src: {
         files: `${srcFolder}/files/**/*.*`,
     },
-    watch: {},
+    watch: {
+        files: `${srcFolder}/files/**/*.*`
+    },
     clean: buildFolder,
     buildFolder: buildFolder,
     srcFolder: srcFolder,
     rootFolder: rootFolder,
-    ftp: ``,
+    ftp: ``
     
 }
