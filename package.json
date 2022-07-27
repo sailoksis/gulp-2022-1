@@ -9,7 +9,11 @@
   },
   "author": "FLS",
   "license": "ISC",
+<<<<<<< HEAD
   "devDependencies": {
+=======
+  "dependencies": {
+>>>>>>> 379619b021c53d9f52053cbe599edae87b563b6a
     "gulp": "^4.0.2"
   }
 }
