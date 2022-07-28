@@ -1,0 +1,22 @@
+.no-webp body {
+  background: url("../img/cover.png") 0 0 no-repeat; }
+
+body {
+  background-color: aquamarine;
+}
+
+body span {
+  color: rgb(126, 109, 109);
+}
+
+@media (max-width: 768px) {
+  span {
+    font-size: 20px;
+  }
+
+  body {
+    background-color: green;
+  }
+}
+
+.webp body { background: url(../img/cover.webp) 0 0 no-repeat; }
