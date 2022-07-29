@@ -25,6 +25,7 @@ import { js } from "./gulp/tasks/js.js";
 import { images } from "./gulp/tasks/images.js";
 import { otfToTtf, ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
 import { svgSprive } from "./gulp/tasks/svgSprive.js";
+import { ftp } from "./gulp/tasks/ftp.js";
 
 //Watcher for file changes
 function watcher() {
@@ -46,10 +47,12 @@ const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images)
 //Building scenarios for executing tasks 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
+const deployFTP = gulp.series(reset, mainTasks, ftp);
 
 // Экспорт сценариев
 export { dev }
 export { build }
+export { deployFTP }
 
 //Implementation the default script
 gulp.task('default', dev);
