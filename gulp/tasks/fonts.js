@@ -55,7 +55,7 @@ export const fontsStyle = () => {
                 let newFileOnly;
                 for (var i = 0; i< fontsFiles.length; i++) {
                     //записываем подключения шрифтов в файл стилей
-                    let fontFileName = fontsFile[i].split('.')[0];
+                    let fontFileName = fontsFiles[i].split('.')[0];
                     if (newFileOnly !== fontFileName) {
                         let fontName = fontFileName.split('-')[0] ? fontFileName.split('-')[0] : fontFileName;
                         let fontWeight = fontFileName.split('-')[1] ? fontFileName.split('-')[1] : fontFileName;
