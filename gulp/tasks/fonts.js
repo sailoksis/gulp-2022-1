@@ -1,6 +1,6 @@
 import fs from 'fs';
 import fonter from 'gulp-fonter';
-import ttf2woff2 from 'fonter-ttf2woff2';
+import ttf2woff2 from 'gulp-ttf2woff2';
 
 export const otfToTtf = () => {
 //Ищем файлы шрифтов .otf
@@ -49,9 +49,9 @@ export const fontsStyle = () => {
     fs.readdir(app.path.build.fonts, function (err, fontsFiles){
         if (fontsFiles) {
             //Проверяем существует ли файл стилей для подключения шрифтов
-            if (!fs.existsSync(fontsFile)){
+            if (!fs.existsSync(fontsFile)) {
                 // Если файла нет, создаем его
-                fs.writeFile(fontsFile, '', cd);
+                fs.writeFile(fontsFile, '', cb);
                 let newFileOnly;
                 for (var i = 0; i< fontsFiles.length; i++) {
                     //записываем подключения шрифтов в файл стилей
@@ -78,7 +78,7 @@ export const fontsStyle = () => {
                         } else {
                             fontWeight = 400;
                         }
-                        fs.appendFile(fontsFile, `@font-face {\n\tfont-family: ${fontName};\n\tfont-display: swap;\n\tsrc: url("../fonts/${fontFileName}.woff2") format("woff2"),url("../fonts/${fontFileName}.woff") format("woff");\n\tfont-weight:${fontWeight};\n\tfont-style: normal;\n}\r\n`, cb);
+                        fs.appendFile(fontsFile, `@font-face {\n\tfont-family: ${fontName};\n\tfont-display: swap;\n\tsrc: url("../fonts/${fontFileName}.woff2") format("woff2"),url("../fonts/${fontFileName}.woff") format("woff");\n\tfont-weight: ${fontWeight};\n\tfont-style: normal;\n}\r\n`, cb);
                         newFileOnly = fontFileName;
                     } 
                 }

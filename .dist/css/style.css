@@ -1,6 +1,10 @@
 .no-webp body {
   background: url("../img/cover.png") 0 0 no-repeat; }
 
+body {
+  font-family: Montserrat, Quicksand;
+}
+
 body span {
   color: red;
 }
